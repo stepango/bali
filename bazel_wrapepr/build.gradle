@@ -1,0 +1,11 @@
+buildDir = "gradleBuild"
+
+def libName = project.name
+
+exec {
+    workingDir '../'
+    commandLine 'bazel', 'build', "//$libName:$libName"
+}
+
+configurations.maybeCreate("default")
+artifacts.add("default", file("../bazel-bin/$libName/lib${libName}.jar"))
