@@ -1,5 +1,3 @@
-buildDir = "gradleBuild"
-
 def libName = project.name
 
 exec {
